@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="red_buoy">
+    <static>true</static>
+
+    <link name="link">
+
+      <visual name="visual">
+
+        <!-- STL modeli Y ekseninde dik export edildigi icin
+             Gazebo Z-up sistemine 90 derece cevriliyor. -->
+        <pose>0 0 0 1.5708 0 0</pose>
+
+        <cast_shadows>false</cast_shadows>
+
+        <geometry>
+          <mesh>
+            <uri>model://red_buoy/meshes/buoy.stl</uri>
+          </mesh>
+        </geometry>
+
+        <material>
+          <!-- Dengeli, saf ve mat kirmizi -->
+          <ambient>0.55 0.00 0.00 1</ambient>
+          <diffuse>0.85 0.00 0.00 1</diffuse>
+          <specular>0.00 0.00 0.00 1</specular>
+          <emissive>0.02 0.00 0.00 1</emissive>
+
+          <pbr>
+            <metal>
+              <metalness>0.0</metalness>
+              <roughness>1.0</roughness>
+            </metal>
+          </pbr>
+        </material>
+
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.35</radius>
+            <length>1.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
